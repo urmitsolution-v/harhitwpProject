@@ -1,0 +1,476 @@
+/* common css */
+:root {
+  --primeCol: #E52D33;
+  --accentCol: #bd0006;
+  --alterColMain: #FACA0A;
+  --alterColAccent: #159913;
+  --gradient: linear-gradient(to bottom, var(--primeCol), var(--accentCol));
+  --gradient2: linear-gradient(to right, var(--alterColMain) -12%, var(--alterColAccent));
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+select[readonly] {
+  pointer-events: none;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto-Regular";
+}
+
+body,
+span {
+  font-family: "Roboto-Regular";
+}
+
+.navbar-brand {
+  padding-top: 0px !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* button css */
+.blue_btn {
+  border-radius: 2px;
+  /*box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.6);*/
+  /*background-image: linear-gradient(to bottom, #0079d8, #0044af);*/
+  width: auto;
+  padding: 10px 40px;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+}
+
+.blue_btn.orange_btn {
+  background-image: var(--gradient);
+  border: 0 !important;
+  box-shadow: 0 4px 0 0 var(--primeCol);
+}
+
+.blue_btn.white_btn {
+  border: solid 1px #0044af;
+  background-color: #ffffff;
+  color: #0044af;
+  background-image: initial;
+}
+
+.blue_btn.darkblue_btn {
+  background-image: var(--gradient);
+}
+
+/* input css */
+.has-float-label .form-control {
+  border: solid 1px #0044af;
+  background-color: #ffffff;
+  height: 40px;
+  margin-bottom: 24px;
+}
+
+.has-float-label .form-control::placeholder {
+  font-size: 14px;
+  font-family: "Roboto-Regular";
+  color: #a4bee6;
+}
+
+.has-float-label label {
+  font-size: 10px;
+  font-family: "Roboto-Regular";
+  color: #00245b;
+  margin: 0;
+}
+
+.has-float-label .form-control:placeholder-shown:not(:focus)+* {
+  font-size: 13px;
+  top: 11px;
+}
+
+.has-float-label textarea.form-control {
+  height: auto;
+  min-height: 100px;
+}
+
+/* radio button css */
+
+.custom_radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom_radio .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 1px solid #0044af;
+  display: inline-block;
+}
+
+.custom_radio input:checked~.checkmark {
+  background-color: #eef4ff;
+}
+
+.custom_radio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom_radio input:checked~.checkmark:after {
+  display: block;
+}
+
+.custom_radio .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /*background: #0044af;*/
+}
+
+/* checkbox css */
+.custom_checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  font-family: "Roboto-Regular";
+  /*color: #0044af;*/
+  margin-bottom: 0px;
+}
+
+.custom_checkbox.agree_text {
+  cursor: auto;
+  margin-top: 10px;
+}
+
+.custom_checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom_checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #0044af;
+  border-radius: 3px;
+}
+
+.custom_checkbox input:checked~.checkmark {
+  background-color: #fff;
+}
+
+.custom_checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom_checkbox input:checked~.checkmark:after {
+  display: block;
+}
+
+.custom_checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 7px;
+  height: 11px;
+  border: solid #0044af;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* custom file upload btn css */
+.custom_file_btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.custom_file_btn .btn {
+  border: dashed 1px #0044af;
+  background-color: #e8f1ff;
+  color: #99c1ff;
+  font-size: 14px;
+  font-family: "Roboto-Regular";
+  padding: 10px;
+  height: 40px;
+}
+
+.custom_file_btn input[type="file"] {
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* custom file upload btn css end*/
+
+/* title with bg css */
+.fs-title {
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.6);
+  background-image: var(--gradient);
+  padding: 14px 20px;
+  font-family: "Roboto-Regular";
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 25px;
+  letter-spacing: initial;
+}
+
+/* title with bg css end */
+/* modal popup css start */
+.custom_modal .confirmation_msg {
+  font-family: "Roboto-Regular";
+  color: #0044af;
+  font-size: 16px;
+  width: auto;
+  max-width: 510px;
+  margin: 0px auto 50px auto;
+}
+
+.custom_modal .modal-header .fs-title {
+  box-shadow: none;
+}
+
+.custom_modal .modal-header .fs-title h4 {
+  font-size: 16px;
+}
+
+.custom_modal .modal-header .fs-title .close {
+  position: absolute;
+  right: 10px;
+  opacity: 1;
+  font-size: 22px;
+  margin: 0;
+}
+
+.custom_modal .modal-header .fs-title .close span:before {
+  color: #fff;
+}
+
+.custom_modal .modal-body {
+  padding: 70px 50px;
+}
+
+.custom_modal .modal-body .modal_btn_group button {
+  width: auto;
+  min-width: 200px;
+}
+
+/* modal popup css end */
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+/* main header css starts here */
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  background: #fff;
+  margin-bottom: 6em;
+}
+
+.bg {
+  margin-top: 12em;
+}
+
+header .logout_section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 50px;
+  height: 60px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--primeCol);
+}
+
+header .logout_section .c_edit {
+  border-left: 1px solid #0044af;
+  border-right: 1px solid #0044af;
+  height: 100%;
+  padding: 0px 20px;
+}
+
+header .logout_section .c_edit .blue_btn {
+  padding: 2px 5px;
+  font-size: 10px;
+  display: flex;
+  border-radius: 4px;
+  font-family: "Roboto-Bold";
+}
+
+header .logout_section .font_inc_dec_block {
+  padding: 0px 20px;
+}
+
+header .logout_section .font_inc_dec_block span.sub_sup_in {
+  font-size: 16px;
+}
+
+header .logout_section .font_inc_dec_block span {
+  font-size: 11px;
+  font-family: "Roboto-Regular";
+  color: #fff;
+}
+
+.lang_block,
+.search_block {
+  font-size: 14px;
+  color: #ffff;
+}
+
+header .logout_section .logout_block .signup_btn,
+.login_btn {
+  /* background-image: var(--gradient); */
+  background-color: var(--primeCol);
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+.header_section {
+  padding: 10px 0px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header_section .navbar {
+  padding: 0px 25px;
+}
+
+.header_section .harit_logo {
+  width: 140px;
+}
+
+.header_section .navbar-nav .dropdown a.nav-link,
+.header_section .navbar-nav .dropdown a.nav-link:hover {
+  color: #00245b;
+  font-family: "Roboto-Regular";
+  font-size: 16px;
+}
+
+.header_section .navbar-nav .dropdown.active a.nav-link {
+  color: var(--primeCol);
+}
+
+.header_section .navbar-nav .dropdown.active a.nav-link.active .dropdown-toggle::before {
+  color: var(--primeCol);
+}
+
+.header_section .navbar-light .navbar-brand {
+  margin-right: 60px;
+}
+
+.copyright ul {
+  padding-left: 0px;
+}
+
+.mb_80 {
+  margin-bottom: 80px;
+}
+
+label.error {
+  color: #ff0000;
+}
+
+.notes h5 {
+  color: var(--primeCol);
+  padding-bottom: 1rem;
+}
+
+.modal {
+  overflow-y: auto !important;
+}
+
+.coming-soon h3 {
+  margin: 30px 30px;
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #151515;
+}
+
+.name-block .col-form-label,
+.name-block .name-input-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.name-block .col-form-label {
+  width: 34%;
+}
+
+.name-block .name-input-block {
+  width: 63%;
+  margin-left: -6px;
+  margin-top: 10px;
+}
+
+.name-block .name-input-block input {
+  width: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,276 @@
+body {
+  background-size: cover;
+  background-image: url(../images/banners.png);
+  background-repeat: no-repeat;
+  /*background-size: 300px 100px;*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#signup input[name="name"] {
+  text-transform: capitalize;
+}
+
+.user-reg {
+  height: auto;
+  /* margin: 52px 0 0; */
+  padding: 20px 0;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(2px);
+  border: solid 2px var(--primeCol);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.reg-line {
+  height: auto;
+  margin: 0;
+  padding: 0px;
+  margin: 0px;
+  width: 1px;
+  color: transparent;
+  background-color: #0044af;
+}
+.Already {
+  font-size: 14px;
+  text-align: center;
+  color: #424242;
+}
+.apply-franchisee-box {
+  color: #a4bee6;
+  padding: 5px 0px;
+}
+.apply-franchisee-text
+/* .otp-form */ {
+  margin: 0 0 8px;
+  font-family: Roboto-bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #0044af;
+  text-align: center;
+}
+.enter-details
+/* .otp-form-text */ {
+  margin: 8px 18px 0;
+  font-size: 15px;
+  color: #0044af;
+  text-align: center;
+}
+
+.e,
+.next {
+  font-size: 20px;
+  padding: 6px 0px;
+  color: white;
+  display: inline-block;
+
+  /* background-image: linear-gradient(to bottom, #0079d8, #0044af);  */
+}
+button.next,
+input.next {
+  border: 0;
+  border-radius: 5px;
+}
+input::placeholder {
+  font-size: 14px !important;
+}
+.click-here {
+  font-size: 13px;
+  text-align: center;
+  color: #424242;
+}
+.otp-box {
+  width: 50px;
+  border-radius: 4px;
+  border: solid 1px var(--primeCol);
+  margin-right: 10px;
+  height: calc(1.5em + 0.75rem + 12px) !important;
+  padding: 1rem;
+}
+.mobile-number {
+  text-align: center;
+  padding: 0px;
+  font-size: 14px !important;
+}
+
+select {
+  font-size: 14px !important;
+}
+/*..........................................................*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.footer .footer_bottom {
+  background-color: #000000;
+}
+
+.footer .copyright span {
+  font-family: "Roboto-Regular";
+  color: #fff;
+  font-size: 12px;
+}
+
+.footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.footer .credits a {
+  color: #9eccf4;
+}
+
+.form-control,
+.custom-select {
+  height: calc(1.3em + 0.75rem + 12px) !important;
+  border: solid 1px var(--primeCol);
+}
+
+.form-control:focus,
+.custom-select:focus {
+  border: solid 2px var(--primeCol);
+}
+
+.login .title,
+.login .subtitle {
+  font-family: "Roboto-bold";
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  color: var(--primeCol);
+}
+
+.login .title {
+  font-size: 24px;
+}
+.login .subtitle {
+  font-size: 14px;
+}
+.login .note {
+  font-family: "Roboto-Regular";
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #424242;
+}
+
+.no-gutter {
+  border: solid 2px var(--primeCol);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-right: 2px solid var(--primeCol);
+}
+
+.no-gutter .quick-links {
+  border-right: 2px solid var(--primeCol);
+}
+
+.btn-signup {
+  color: white;
+  background: var(--gradient);
+  border-radius: 2px;
+  font-size: 14px;
+}
+.btn-links {
+  color: white;
+  background-image:var(--gradient);
+  padding: 1.5rem;
+  border-radius: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.btn-links:hover{
+  color: #fff;
+}
+
+.form-signin span a {
+  color: var(--primeCol);
+}
+
+/* footer css end here */
+
+/* media queries css */
+@media only screen and (max-width: 1366px) {
+  .header_section .navbar-light .navbar-brand {
+    margin-right: 40px;
+  }
+
+  .header_section .dropdown {
+    margin-right: 22px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header_section .navbar-light .navbar-brand {
+    margin-right: 40px;
+  }
+}
+
+/* tooltip css start here */
+.tooltip1 {
+  position: relative;
+  display: block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip1 .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: var(--primeCol);
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+  z-index: 1;
+  left: auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border: solid 0.6px var(--primeCol);
+  background-color: #fdddd7;
+  font-size: 8px;
+  right: 30px;
+  top: 10px;
+  font-family: "Roboto-Regular";
+}
+
+.tooltip1:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip_in img {
+  position: absolute;
+  right: 10px;
+}
+/* tooltip css end here */
+
+@media only screen and (max-width: 767px) {
+  .no-gutter {
+    flex-direction: column-reverse;
+    border-right: none;
+  }
+  .no-gutter .quick-links {
+    border-right: none;
+    border-top: 2px solid var(--primeCol);
+    margin-top: 2rem;
+  }
+  .no-gutter .login {
+    padding-bottom: 0px !important;
+  }
+}

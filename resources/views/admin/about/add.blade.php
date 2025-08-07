@@ -1,0 +1,199 @@
+@extends('layout.admin')
+@section('title', 'About Us - ')
+
+@section('content')
+
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">About Us</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Section One</h4>
+                                <form method="post" enctype="multipart/form-data" >
+                                    @csrf
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title One</label>
+                                        <input type="text" class="form-control" name="titleone" value="{{ $row->titleone ?? "" }}" id="title" placeholder="">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title Two</label>
+                                        <input type="text" class="form-control" name="titletwo" value="{{ $row->titletwo ?? "" }}" id="title" placeholder="">
+                                    </div>
+                                    </div>
+
+                                   <div class="col-md-12">
+    <div class="mb-3">
+        <label class="form-label">Short Left Description (Todo List)</label>
+
+        <div id="todo-list-wrapper">
+            @if(!empty($row->headline))
+                @foreach(json_decode($row->headline) as $todo)
+                    <div class="input-group mb-2">
+                        <input type="text" name="headline[]" class="form-control" value="{{ $todo }}" placeholder="Enter task">
+                        <button type="button" class="btn btn-danger remove-todo">Remove</button>
+                    </div>
+                @endforeach
+            @else
+                <div class="input-group mb-2">
+                    <input type="text" name="headline[]" class="form-control" placeholder="Enter task">
+                    <button type="button" class="btn btn-danger remove-todo">Remove</button>
+                </div>
+            @endif
+        </div>
+
+        <button type="button" class="btn btn-primary mt-2" id="add-todo">+ Add More</button>
+    </div>
+</div>
+
+
+                              <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formrow-firstname-input" class="form-label">Upload Image</label>
+                                                <input type="file" accept="image/*" name="image" class="form-control" id="formrow-firstname-input"
+                                                    placeholder="">
+                                                    @if ($data->image)
+                                                        <img src="{{ url('uploads') }}/{{ $data->image }}" class="img-thumbnail mt-2" width="200" height="200" style="object-fit: cover;" alt="">
+                                                    @endif
+                                            </div>
+                                        </div>
+
+                                           <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formrow-firstname-input" class="form-label">Upload Image</label>
+                                                <input type="file" accept="image/*" name="image_2" class="form-control" id="formrow-firstname-input"
+                                                    placeholder="">
+                                                    @if ($data->image_2)
+                                                        <img src="{{ url('uploads') }}/{{ $data->image_2 }}" class="img-thumbnail mt-2" width="200" height="200" style="object-fit: cover;" alt="">
+                                                    @endif
+                                            </div>
+                                        </div>
+
+                                          <div class="col-12">
+                                            <button type="submit" class="btn btn-primary w-md">Submit</button>
+                                        </div>
+
+                                    </div>
+                            </div>
+                            <div>
+                            </div>
+                            </form>
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+
+            </div>
+            <!-- end row -->
+
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+
+
+    </div>
+
+@section('header')
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+
+@endsection
+@section('footer')
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+  
+       <script src="<?= url('admin') ?>/ckeditor/ckeditor.js"></script>
+<script>
+if(CKEDITOR) {
+
+  CKEDITOR.replace('editor', {
+      'extraPlugins': '',
+      'filebrowserImageBrowseUrl': '<?= url('admin') ?>/ckeditor/plugins/imgbrowse/imgbrowse.html',
+      'filebrowserImageUploadUrl': '<?= url('admin') ?>/ckeditor/plugins/iaupload.php',
+      'extraAllowedContent': 'audio[]{}',
+       font_names: 'Poppins/Poppins, sans-serif;',
+        contentsCss: 'https://fonts.googleapis.com/css2?family=Poppins&display=swap',
+        bodyClass: 'poppins-font'
+  });
+}
+
+
+if(CKEDITOR) {
+
+  CKEDITOR.replace('editor2', {
+      'extraPlugins': '',
+      'filebrowserImageBrowseUrl': '<?= url('admin') ?>/ckeditor/plugins/imgbrowse/imgbrowse.html',
+      'filebrowserImageUploadUrl': '<?= url('admin') ?>/ckeditor/plugins/iaupload.php',
+      'extraAllowedContent': 'audio[]{}',
+  });
+}
+</script>
+
+
+<script>
+    $('#appendmore').click(function(){
+        var html = '<div class="listitem d-flex mt-2"><input type="text" name="lists[]" class="form-control"><button type="button" class="btn btn-danger closebutton"  id="closebutton"><svg width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11V13H19V11H5Z"></path></svg></button></div>';
+
+        $('#lists_content').append(html);
+
+    })
+
+
+    $(document).on("click", "#closebutton", function() {
+            $(this).parents('.listitem').remove();
+        });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('add-todo').addEventListener('click', function () {
+        let wrapper = document.getElementById('todo-list-wrapper');
+        let html = `
+            <div class="input-group mb-2">
+                <input type="text" name="headline[]" class="form-control" placeholder="Enter task">
+                <button type="button" class="btn btn-danger remove-todo">Remove</button>
+            </div>`;
+        wrapper.insertAdjacentHTML('beforeend', html);
+    });
+
+    document.addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('remove-todo')) {
+            e.target.closest('.input-group').remove();
+        }
+    });
+});
+</script>
+
+
+@endsection
+
+@endsection

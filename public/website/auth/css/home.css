@@ -1,0 +1,995 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  /* font-family: "Roboto"; */
+  font-family: "Roboto-Regular";
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-primary {
+  font-family: "Roboto-Regular";
+}
+
+/*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+/* section {
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+} */
+
+.section-bg {
+  background-color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.section-bgs {
+  background-color: #fffff7;
+}
+
+/*--------------------------------------------------------------
+  # Top Bar
+  --------------------------------------------------------------*/
+#topbar {
+  background: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #444;
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: #428bca;
+}
+
+#topbar .contact-info i {
+  color: #428bca;
+  padding: 4px;
+}
+
+#topbar .contact-info .icofont-phone {
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+#topbar .social-links a {
+  color: #5c768d;
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+  color: #428bca;
+}
+
+/*--------------------------------------------------------------
+  # Center Bar
+  --------------------------------------------------------------*/
+.centerbar {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  padding: 10px 0;
+}
+
+.centerbar .centerbar-links {
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.centerbar .centerbar-links:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.centerbar .links a {
+  color: #000000;
+  padding: 4px 20px;
+  display: inline-block;
+  line-height: 18px;
+  transition: 0.3s;
+}
+
+.centerbar .links .link_text {
+  font-size: 18px;
+  font-family: "Roboto-Regular";
+  color: #000;
+}
+
+.centerbar .links span:first-child {
+  font-size: 18px;
+}
+
+.centerbar .links a:hover {
+  text-decoration-line: underline;
+}
+
+/*--------------------------------------------------------------
+  #  Section-1
+  --------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: calc(100vh - 114px);
+  background-image: url(../images/header-bg.png);
+  padding: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page1-image {
+  padding-top: 100px;
+}
+
+.harhit-logo {
+  padding-top: 20px;
+  height: 70px;
+}
+
+.bar_toggle {
+  color: #fff;
+  font-size: 25px;
+}
+
+.bg_image_text {
+  color: #fff;
+  height: calc(100% - 70px);
+}
+
+.bg_image_text .video_icon {
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
+}
+
+.mt_100 {
+  margin-top: 80px;
+}
+
+button.active {
+  background-color: var(--primeCol);
+  border: none;
+}
+
+.build_text h3 {
+  font-size: 50px;
+  font-family: "Roboto-Bold";
+  line-height: 80px;
+}
+
+.apply_text {
+  font-size: 28px;
+  font-family: "Roboto-Regular";
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    height: calc(100vh - 70px);
+  }
+
+  .build_text h3 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  #hero .carousel-content.container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+}
+
+/*--------------------------------------------------------------
+#   section-2  
+--------------------------------------------------------------*/
+
+.unlock_benefits_section .benefits_block_in .page2-text .page2-title {
+  font-family: "Roboto-Bold";
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.unlock_benefits_section .benefits_block_in .page2-text p {
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+  margin-bottom: 33px;
+}
+.unlock_benefits_section .benefits_block_in .page2-text ul {
+  padding-left: 20px;
+}
+
+.unlock_benefits_section .benefits_block_in .page2-text ul li {
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+  margin-bottom: 10px;
+  list-style-type: disc;
+  /* display: flex; */
+  /* align-items: flex-start; */
+}
+
+/* .unlock_benefits_section .benefits_block_in .page2-text ul li span.round {
+  min-width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: black;
+  display: inline-block;
+  margin-right: 10px;
+} */
+
+.page2-text .read-more {
+  color: #e64122;
+}
+
+/*--------------------------------------------------------------
+  #  secion-3
+  --------------------------------------------------------------*/
+.page3 {
+  padding-top: 70px;
+  background-image: linear-gradient(to left, #e64122 10%, #ff8400);
+}
+
+.page3 .section-title .page3-title {
+  color: #ffff;
+  font-size: 30px;
+  font-family: "Roboto-Bold";
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+
+.page3 .section-title p {
+  font-family: "Roboto-Regular";
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.page3 .page3-text {
+  background-color: #ffff;
+  border-top-left-radius: 55px;
+}
+
+.page3-text img {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#page3-border {
+  border-right: 1px solid rgba(112, 112, 112, 0.2);
+  justify-content: center;
+  margin-bottom: 15px;
+  padding-top: 10px;
+}
+
+.text-center2 {
+  color: #000000;
+  font-size: 18px;
+  font-family: "Roboto-Medium";
+  padding: 0px 35px;
+  text-align: center;
+}
+
+.text-center1 {
+  color: #7b7b7b;
+  font-size: 14px;
+  font-family: "Roboto-Regular";
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+  # section-4
+  --------------------------------------------------------------*/
+
+.page4-button {
+  border-radius: 10px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  height: 80px;
+  /* margin-bottom: 30px; */
+  padding: 30px;
+  max-width: 50%;
+  margin: 0px auto 30px auto;
+}
+
+.page4-button p {
+  color: #b0b0b0;
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+}
+.page4_right_block_bottom {
+  height: calc(100% - 190px);
+}
+
+.page4-button button,
+.page4-button button:hover,
+.page4-button button:focus {
+  outline: none;
+  border: none;
+  background-color: #000000;
+  color: #ffff;
+  border-radius: 5px;
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+  padding: 8px 25px;
+}
+.page4-button button a {
+  color: #fff;
+}
+/*----------------------------------------------------
+  # section-5
+  ------------------------------------------------*/
+.page5 .homepage_heading,
+.page5 .homepage_desc {
+  margin-bottom: 50px;
+}
+
+.page5_tabs .nav-tabs {
+  border-radius: 6px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  margin-bottom: 50px;
+  height: auto;
+  /* min-height: 50px; */
+  justify-content: space-around;
+}
+
+.page5_tabs .nav-tabs li {
+  height: 100%;
+}
+
+.page5_tabs .nav-tabs li a {
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #696969;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.page5_tabs .nav-tabs li.active a,
+.page5_tabs .nav-tabs li.active a:hover,
+.page5_tabs .nav-tabs li.active a:focus {
+  color: #fff;
+  background-color: var(--primeCol);
+}
+
+.tab-content p {
+  color: #000000;
+}
+
+.nav-tabs #menu1 {
+  z-index: 999;
+}
+
+/*............................................
+ #  section-6
+ ........................................*/
+.page6 {
+  padding-bottom: 200px;
+  background-image: url("../images/bg-icons.svg");
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.page6-box1 {
+  background-color: #e64122;
+  height: 500px;
+  min-width: 300px;
+  border-radius: 6px;
+  border-top-right-radius: 90px;
+  padding: 30px;
+  position: relative;
+}
+
+.page6-box1 p {
+  color: #ffff;
+  font-size: 24px;
+  font-family: "Roboto-Bold";
+}
+
+.page6-box1 h4 {
+  color: #ffff;
+  font-size: 30px;
+  font-family: "Roboto-Bold";
+  margin: 0 0px 30px 0px;
+}
+
+.page6-box-margin {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.page6-box1.page6-box2 {
+  background-color: #454545;
+}
+
+.page6-box3,
+.page6-box4 {
+  box-shadow: 4px 4px 17px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffff;
+  height: auto;
+  width: 300px;
+  border-bottom-right-radius: 90px;
+  position: absolute;
+  top: 130px;
+  left: 20px;
+  padding: 25px;
+}
+
+.page6-box3 ul {
+  padding-left: 0px;
+}
+
+.page6-box3 ul li {
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.page6-box3 ul li span,
+.page6-box3 ul li img {
+  padding-right: 15px;
+}
+
+/*............................................
+ #  section-7
+ ........................................*/
+.page7 {
+  background-image: url(../images/store-bg.png);
+  color: #ffff;
+  height: 500px;
+}
+
+.page7 .homepage_heading {
+  color: #fff;
+  margin-bottom: 50px;
+  line-height: 42px;
+}
+
+.page7 .homepage_desc {
+  color: #fff;
+  margin-bottom: 65px;
+}
+
+.page7-button {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-bottom: 60px;
+}
+
+.page7 .apply_btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.page7 .apply_btn a {
+  color: #000000;
+  font-family: "Roboto-Medium";
+}
+
+/*............................................
+ #  section-8
+ ........................................*/
+
+.page8 .homepage_desc {
+  margin-bottom: 70px;
+}
+
+/*............................................
+ #  section-9
+ ........................................*/
+
+.page9 .apply_btn {
+  background-color: #000000;
+  color: #ffff;
+}
+
+.page9-image {
+  margin-bottom: 80px;
+}
+
+/*............................................
+ #footer
+ ........................................*/
+/* 
+#footer {
+  background: #587187;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: #5c768d;
+  border-top: 1px solid #768fa6;
+  border-bottom: 1px solid #67839c;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #768fa6;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #0044af;
+  color: #ff8401;
+  text-decoration: none;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff8401;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #9eccf4;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 10px;
+  font-family: 'Roboto-Light';
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #ff8401;
+}
+
+#footer .footer-top .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 4;
+}
+
+#footer .footer-top .footer-newsletter form input[type="email"] {
+  border: 0;
+  padding: 4px;
+  width: calc(100% - 110px);
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #428bca;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 4;
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+  background: #5295ce;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+#footer .credits a {
+  color: #9eccf4;
+} */
+
+/* New code written by swathi 30/04/2021 */
+
+/* top red bar css start here */
+
+.log_sign_btn {
+  padding: 8px 35px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #f47647, #f47647);
+  /*background-color: #fff;*/
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  font-family: "Roboto-Regular";
+}
+
+.apply_btn {
+  border: solid 1px #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Roboto-Regular";
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 12px;
+  width: 220px;
+}
+
+.apply_btn a,
+.log_sign_btn a {
+  color: #fff;
+}
+.homepage_heading {
+  color: #000;
+  font-size: 30px;
+  font-family: "Roboto-Bold";
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.homepage_desc {
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+  color: #696969;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* modal css start here */
+
+.eligibility_modal .modal-body .eligibilty_in h4,
+.guidelines_modal .modal-body .guidelines_in h4,
+.faq_modal .modal-body .faq_in h4 {
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.eligibility_modal .modal-body .eligibilty_in p,
+.guidelines_modal .modal-body .guidelines_in p,
+.faq_modal .modal-body .faq_in p {
+  color: #424242;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.modal-open .modal.eligibility_modal,
+.modal-open .modal.guidelines_modal,
+.modal-open .modal.faq_modal {
+  overflow: hidden;
+}
+.eligibility_modal .close,
+.guidelines_modal .close,
+.faq_modal .close {
+  opacity: 1;
+}
+.eliginilty_table thead {
+  border-radius: 4px;
+  border: solid 1px var(--primeCol);
+  background-image: var(--gradient2);
+}
+.eliginilty_table .table td, .eliginilty_table .table th {
+  border: 1px solid var(--primeCol);
+}
+.eliginilty_table .table > thead > tr > th {
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+  vertical-align: middle;
+}
+.eliginilty_table .table-bordered > tbody > tr > td {
+  letter-spacing: 0.17px;
+  color: #000;
+  font-family: "Roboto-Medium";
+  font-size: 12px;
+  border: solid 1px var(--primeCol);
+  vertical-align: middle;
+}
+.eliginilty_table tbody tr td.heading {
+  letter-spacing: 0.2px;
+  color: #000;
+  font-family: "Roboto-Bold";
+  font-size: 14px;
+  background-color: #ffffd5;
+}
+.eligibility_modal .modal-body .apply_btn.modal-btn {
+  border: solid 1px var(--primeCol);
+  background-color: var(--primeCol);
+  width: 160px;
+}
+/* model css end here */
+
+@media (max-width: 1024px) {
+  .page4-button {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 991px) {
+  .eligibility_modal.modal .modal-body,
+  .guidelines_modal.modal .modal-body,
+  .faq_modal.modal .modal-body {
+    height: auto;
+    max-height: 550px;
+    overflow-y: auto;
+  }
+  .page5_tabs .nav-tabs li a {
+    font-size: 12px;
+  }
+
+  .page5_tabs .nav-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apply_btn {
+    width: auto;
+    min-width: 150px;
+  }
+
+  .homepage_heading {
+    font-size: 26px;
+  }
+
+  .homepage_desc {
+    font-size: 16px;
+  }
+
+  .unlock_benefits_section .benefits_block_in .page2-text .page2-title {
+    font-size: 24px;
+  }
+
+  .unlock_benefits_section .benefits_block_in .page2-text p,
+  .unlock_benefits_section .benefits_block_in .page2-text ul li {
+    font-size: 16px;
+  }
+
+  .page3 .page3-text {
+    padding: 12px 0px;
+  }
+
+  .page4-button {
+    padding: 30px 20px;
+    max-width: 60%;
+  }
+
+  .page5_tabs .nav-tabs li a {
+    font-size: 11px;
+  }
+
+  .page6-box1 h4 {
+    font-size: 26px;
+  }
+
+  .footer .footer-top .footer-links .contact_in {
+    padding: 9px 20px 9px 10px;
+  }
+
+  .footer .footer-top .footer-links .contact_in label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .log_sign_btn {
+    font-size: 14px;
+    padding: 8px 26px;
+  }
+  .page4-button {
+    max-width: 80%;
+  }
+  .build_text h3 {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  .apply_text {
+    font-size: 22px;
+    margin: 0px;
+  }
+
+  .centerbar .links .link_text {
+    font-size: 12px;
+  }
+
+  .unblock_left_block_img,
+  .unblock_right_bottom_block_img,
+  .page3-image,
+  .page4_left_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .page5_tabs .tab-content img {
+    margin-bottom: 10px;
+  }
+
+  .d_sm_none {
+    display: none;
+  }
+
+  .page6-box-margin {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+  }
+
+  .mb_100 {
+    margin-bottom: 150px;
+  }
+
+  .unblock_left_block_img {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .homepage_heading img {
+    width: 70px;
+  }
+  .mb_80 {
+    margin-bottom: 50px;
+  }
+  .centerbar .links span:first-child,
+  .centerbar .links .link_text {
+    font-size: 10px;
+  }
+  .lang_block {
+    display: none !important;
+  }
+  .mt_100 {
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  .d_mb_none {
+    display: none !important;
+  }
+
+  /* .page4-button {
+    max-width: 100%;
+    padding: 10px;
+  } */
+
+  .header .logout_section .font_inc_dec_block {
+    padding: 8px 12px;
+  }
+
+  .log_sign_btn {
+    font-size: 12px;
+    padding: 4px 7px;
+  }
+
+  .bg_image_text .video_icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .centerbar .links a {
+    padding: 4px 6px;
+  }
+
+  .page4-button {
+    height: 60px;
+  }
+
+  .page4-button p {
+    font-size: 12px;
+  }
+
+  .page4-button button,
+  .page4-button button:hover,
+  .page4-button button:focus {
+    font-size: 11px;
+    padding: 8px 15px;
+  }
+
+  .page6-box3,
+  .page6-box4 {
+    left: 0px;
+  }
+}

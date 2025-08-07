@@ -1,0 +1,444 @@
+/*inner page start here*/
+.inner_page_block {
+  margin-top: 1rem;
+}
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  /*height: 70%;*/
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  right: 0%;
+  top: 0;
+  background-color: #fff;
+  /* Black fallback color */
+  /*background-color: rgba(0, 0, 0, 0.9);*/
+  /* Black w/opacity */
+  overflow-y: auto;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  z-index: 1001;
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 15%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  /*text-align: center;*/
+  /* Centered text/links */
+  margin-top: 3.5rem !important;
+  z-index: 1001;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  /*padding: 8px;*/
+  text-decoration: none;
+  font-size: 24px;
+  color: #000;
+  display: block;
+  /* Display block instead of inline */
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.overlay-content span {
+  padding: 0rem 1rem;
+}
+
+.overlay-content ul {
+  margin-top: 2rem;
+  list-style: none;
+  color: #000;
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+.overlay-content ul li {
+  font-size: 24px;
+  padding-top: 3rem;
+  cursor: pointer;
+  color: #000;
+}
+
+.overlay p {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--primeCol);
+  /* Display block instead of inline */
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.submenus li a,
+.subsubmenu li a {
+  font-family: Ubuntu;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay span:hover,
+.overlay span:focus {
+  color: var(--primeCol);
+  text-decoration: none;
+}
+
+.overlay-content .lg-md-br {
+  border-right: 1px solid #000;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 1rem;
+  right: 2%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+/* footer css start here */
+.footer{
+  position: relative;
+  color:#fff;
+}
+.footer .footer-top {
+  backdrop-filter: blur(4px);
+  /* background-image: linear-gradient(to left, #0044af 74%, #00245b); */
+  -webkit-backdrop-filter: blur(4px);
+  padding: 40px 0px;
+  position: relative;
+}
+
+.footer .footer_in {
+  position: relative;
+  z-index: 3;
+}
+
+.footer::before {
+  position: absolute;
+  content: "";
+  background-image: url("../images/footer-image.png");
+  top: 0;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* .footer .footer-top::after {
+  position: absolute;
+  content: '';
+  background-color: rgba(0, 68, 175, 0.5);
+  top: 0;
+  width: 100%;
+  height: 100%;
+} */
+.footer .footer-links{
+  color: rgba(255,255,255,.6);
+}
+.footer .footer-top .footer-info .logo {
+  margin-bottom: 30px;
+}
+
+.footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.footer .footer-top .social-links h5 {
+  font-size: 15px;
+  /* color: var(--primeCol); */
+  color: #fff;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.footer .footer-top .footer-links h4 {
+  font-size: 16px;
+  color: #fff;
+  font-family: "Roboto-Medium";
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.footer .footer-top .footer-links .contact_in {
+  padding: 9px 40px 9px 20px;
+  border-radius: 4px;
+  border: solid 1px #ffffff;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.footer .footer-top .footer-links .contact_in label {
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+  font-family: "Roboto-Regular";
+}
+
+.footer .footer-top .footer-links .contact_in span {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  font-family: "Roboto-Light";
+}
+
+.footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* .footer .footer-top .footer-links ul li:last-child {
+  padding-top: 20px;
+} */
+
+.footer .footer-top .footer-links ul a,
+.footer a {
+  color: rgba(255,255,255,.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1.3;
+  /* font-family: "Roboto-Light"; */
+  font-size: 14px;
+}
+
+.footer .logo {
+  justify-content: flex-end;
+}
+.footer .hh-mini-footer{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer .hh-mini-footer a{
+  font-size: 12px;
+}
+.footer .footer-top .footer-links ul a:hover,
+.footer .footer-top .footer-links a:hover {
+  color: #fff;
+}
+
+.footer .footer_bottom {
+  /* background-color: #000000; */
+  background-color: var(--primeCol);
+}
+.footer .footer_bottom li {
+  color: #fff;
+  font-family: "Roboto-Light";
+  font-size: 14px;
+}
+.footer .copyright li:last-child {
+  margin-top: 20px;
+}
+
+.footer .copyright li:first-child {
+  margin-bottom: 10px;
+}
+
+.footer .copyright li.date {
+  font-family: "Roboto-Bold";
+}
+
+.footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.footer .credits a {
+  color: #9eccf4;
+}
+
+/* footer css end here */
+
+/* media queries css start*/
+@media only screen and (max-width: 1366px) {
+  .header_section .navbar-light .navbar-brand {
+    margin-right: 40px;
+  }
+
+  .header_section .dropdown {
+    margin-right: 22px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header_section .navbar-light .navbar-brand {
+    margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .inner_page_block {
+    margin-top: 1rem;
+  }
+
+  .inner_small_banner h1 {
+    font-size: 30px;
+    letter-spacing: 6px;
+  }
+
+  #progressbar .active:after,
+  #progressbar .active:before {
+    content: none;
+  }
+
+  #progressbar .active {
+    border-right: 2px solid #eef4ff;
+  }
+
+  .enclosure_form_card .enclosure_document .applicant_label {
+    margin-bottom: 4px;
+  }
+
+  .header_section .navbar {
+    padding: 10px 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .logout_section {
+    padding: 0px;
+  }
+
+  .header_section .navbar {
+    padding: 20px;
+  }
+
+  .inner_small_banner h1 {
+    font-size: 18px;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .reg_form_main h2 {
+    font-size: 22px;
+  }
+
+  .reg_form_main .reg_in h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .msform .blue_btn {
+    margin-top: 20px;
+    margin-right: 0px;
+  }
+
+  #progressbar .active {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #progressbar li {
+    font-size: 12px;
+  }
+
+  .msform fieldset {
+    padding: 40px 20px;
+  }
+
+  .custom_modal .modal_btn_group {
+    flex-direction: column;
+  }
+
+  .custom_modal .modal_btn_group .orange_btn {
+    margin-bottom: 10px;
+  }
+
+  .custom_modal .modal-body {
+    padding: 50px 20px;
+  }
+
+  .footer .footer_in {
+    text-align: center;
+  }
+
+  .footer .footer-top .footer-links ul li {
+    justify-content: center;
+  }
+
+  .footer .social-links {
+    margin-bottom: 12px;
+  }
+
+  .social-links img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .footer .logo {
+    justify-content: center;
+  }
+
+  .footer .copyright span {
+    font-size: 8px;
+  }
+  .footer .footer-top .footer-links .contact_in {
+    padding: 4px;
+    text-align: left;
+  }
+  .footer .footer-top .footer-links .contact_in label {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
+/* media queries css end*/
