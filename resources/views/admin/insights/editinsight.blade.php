@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Edit Insight</h4>
+                        <h4 class="mb-sm-0 font-size-18">Edit Entrepreneurship</h4>
                     </div>
                 </div>
             </div>
@@ -21,15 +21,11 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title mb-4">Insight Details</h4>
-
-                         
+                            <h4 class="card-title mb-4">Entrepreneurship Details</h4>
                             <form method="POST"  enctype="multipart/form-data">
                                 @csrf
-
                                 <div class="row">
-                                    <!-- Title -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Title</label>
                                             <input type="text" class="form-control" name="title" id="sluggenrate" value="{{ old('title', $row->title) }}">
@@ -37,16 +33,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- Slug -->
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label">Slug</label>
-                                            <input type="text" class="form-control" name="slug" id="slugbox" value="{{ old('slug', $row->slug) }}">
-                                        </div>
-                                    </div>
-
                                     <!-- Image Upload -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Upload Image</label>
                                           
@@ -86,37 +74,10 @@
                                                 class="form-control editor">{{ old('short_description', $row->short_description) }}</textarea>
                                         </div>
 
-                                    <div class="col-md-12 mb-3">
-                                        <label class="form-label">Description</label>
-                                        <textarea name="description" id="editor" class="form-control editor">{{ old('description', $row->description) }}</textarea>
-                                    </div>
+                              
                                 </div>
 
-                                <!-- SEO -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4 class="card-title mb-4">SEO Details</h4>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Meta Title</label>
-                                            <input type="text" name="meta_title" class="form-control" value="{{ old('meta_title', $row->meta_title) }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Meta Tags</label>
-                                            <input type="text" name="meta_tags" class="form-control" value="{{ old('meta_tags', $row->meta_tags) }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 mb-3">
-                                        <label class="form-label">Meta Description</label>
-                                        <textarea name="meta_description" class="form-control" rows="2">{{ old('meta_description', $row->meta_description) }}</textarea>
-                                    </div>
-                                </div>
+                       
 
                                 <!-- Status & Feature -->
                                 <div class="row">
@@ -128,17 +89,6 @@
                                                 <option value="N" {{ old('status', $row->status) == 'N' ? 'selected' : '' }}>Inactive</option>
                                             </select>
                                             @error('status') <div class="text-danger mt-1">{{ $message }}</div> @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Is Featured</label>
-                                            <select name="show_home_page" class="form-select">
-                                                <option value="Y" {{ old('show_home_page', $row->show_home_page) == 'Y' ? 'selected' : '' }}>Yes</option>
-                                                <option value="N" {{ old('show_home_page', $row->show_home_page) == 'N' ? 'selected' : '' }}>No</option>
-                                            </select>
-                                            @error('show_home_page') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                                         </div>
                                     </div>
                                 </div>

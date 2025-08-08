@@ -892,6 +892,281 @@ class Pagecontroller extends Controller
 
         return view('admin.about.eligibilitybanner', compact('data', 'row'));
     }
+   
+   
+    public function entrepreneurship(Request $request)
+    {
+        if ($request->method() == 'POST') {
+
+            $data = [
+                'titleone' => $request->titleone,
+                'titletwo' => $request->titletwo,
+            ];
+            
+            $new = Info::find(33);
+            $new->info_one = json_encode($data);
+            
+            if ($request->image) {
+                $new->image = updateImage($request->image, $new, 'image');
+            }
+            if ($request->image_2) {
+                $new->image_2 = updateImage($request->image_2, $new, 'image_2');
+            }
+            if ($request->image_3) {
+                $new->image3 = updateImage($request->image_3, $new, 'image3');
+            }
+            $new->save();
+            return redirect()->back()->with('success', 'Updated Successfully');
+        }
+        $data = Info::find(33);
+
+        $row = json_decode($data->info_one);
+
+        return view('admin.about.entrepreneurship', compact('data', 'row'));
+    }
+   
+   
+   public function qualityproducts(Request $request)
+{
+    $info = Info::find(34);
+
+    if ($request->isMethod('post')) {
+
+        // 1. Save title, short, description
+        $data = [
+            'title' => $request->title,
+            // 'short' => $request->short,
+            'description' => $request->description,
+        ];
+        $info->info_one = json_encode($data);
+
+        // 2. Save To-Do Text List
+        if ($request->has('todo_titles')) {
+            $info->info_two = json_encode($request->todo_titles);
+        }
+
+        // 3. Save Images
+        $finalImages = [];
+
+        // 3.1 Keep old images (if any)
+        if ($request->has('existing_images')) {
+            $finalImages = $request->existing_images;
+        }
+
+        // 3.2 Upload new images
+        if ($request->hasFile('todo_images')) {
+            foreach ($request->file('todo_images') as $file) {
+                if ($file->isValid()) {
+                    $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->move(public_path('uploads'), $filename);
+                    $finalImages[] = $filename;
+                }
+            }
+        }
+
+        // 3.3 Delete removed images from disk
+        $oldImages = json_decode($info->info_three, true) ?? [];
+        $deletedImages = array_diff($oldImages, $finalImages);
+        foreach ($deletedImages as $imageToDelete) {
+            $path = public_path('uploads/' . $imageToDelete);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        // 3.4 Save updated image list
+        $info->info_three = json_encode($finalImages);
+
+        $info->save();
+        return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    $row = json_decode($info->info_one);
+    $todo_titles = json_decode($info->info_two);
+    $todo_images = json_decode($info->info_three);
+
+    return view('admin.about.qualityproducts', compact('info', 'row', 'todo_titles', 'todo_images'));
+}
+  
+
+public function becomeapart(Request $request)
+{
+    $info = Info::find(35);
+
+    if ($request->isMethod('post')) {
+
+        // 1. Save title, short, description
+        $data = [
+            'title' => $request->title,
+            // 'short' => $request->short,
+            'form_title' => $request->form_title,
+        ];
+        $info->info_one = json_encode($data);
+
+        // 3. Save Images
+        $finalImages = [];
+
+        // 3.1 Keep old images (if any)
+        if ($request->has('existing_images')) {
+            $finalImages = $request->existing_images;
+        }
+
+        // 3.2 Upload new images
+        if ($request->hasFile('todo_images')) {
+            foreach ($request->file('todo_images') as $file) {
+                if ($file->isValid()) {
+                    $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->move(public_path('uploads'), $filename);
+                    $finalImages[] = $filename;
+                }
+            }
+        }
+
+        // 3.3 Delete removed images from disk
+        $oldImages = json_decode($info->info_three, true) ?? [];
+        $deletedImages = array_diff($oldImages, $finalImages);
+        foreach ($deletedImages as $imageToDelete) {
+            $path = public_path('uploads/' . $imageToDelete);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        // 3.4 Save updated image list
+        $info->info_three = json_encode($finalImages);
+
+        $info->save();
+        return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    $row = json_decode($info->info_one);
+    $todo_images = json_decode($info->info_three);
+
+    return view('admin.about.becomeapart', compact('info', 'row', 'todo_images'));
+}
+
+
+public function bestSectoion(Request $request)
+{
+    $info = Info::find(36);
+
+    if ($request->isMethod('post')) {
+
+        // 1. Save title, short, description
+        $data = [
+            'title' => $request->title,
+            'button_name' => $request->button_name,
+            'short_description' => $request->short_description,
+            'e_title' => $request->e_title,
+            'e_short_description' => $request->e_short_description,
+        ];
+        $info->info_one = json_encode($data);
+           if ($request->image) {
+                $info->image = updateImage($request->image, $info, 'image');
+            }
+             if ($request->image_2) {
+                $info->image_2 = updateImage($request->image_2, $info, 'image_2');
+            }
+        $info->save();
+        return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    $row = json_decode($info->info_one);
+    
+    return view('admin.about.bestSectoion', compact('info', 'row'));
+}
+
+
+
+
+
+public function haicl_strengthening_partners(Request $request)
+{
+    $info = Info::find(37);
+
+    if ($request->isMethod('post')) {
+
+        // 1. Save title, short, description
+        $data = [
+            'title' => $request->title,
+            'button_name' => $request->button_name,
+            'form_title' => $request->form_title,
+        ];
+        $info->info_one = json_encode($data);
+        $info->aboutlongtext = $request->description;
+
+        // 3. Save Images
+        $finalImages = [];
+
+        // 3.1 Keep old images (if any)
+        if ($request->has('existing_images')) {
+            $finalImages = $request->existing_images;
+        }
+
+        // 3.2 Upload new images
+        if ($request->hasFile('todo_images')) {
+            foreach ($request->file('todo_images') as $file) {
+                if ($file->isValid()) {
+                    $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                    $file->move(public_path('uploads'), $filename);
+                    $finalImages[] = $filename;
+                }
+            }
+        }
+
+        // 3.3 Delete removed images from disk
+        $oldImages = json_decode($info->info_three, true) ?? [];
+        $deletedImages = array_diff($oldImages, $finalImages);
+        foreach ($deletedImages as $imageToDelete) {
+            $path = public_path('uploads/' . $imageToDelete);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+        $info->info_three = json_encode($finalImages);
+
+
+        // 4. Save Second To-Do Images
+$secondImages = [];
+
+// 4.1 Keep old second images (if any)
+if ($request->has('existing_second_images')) {
+    $secondImages = $request->existing_second_images;
+}
+
+// 4.2 Upload new second images
+if ($request->hasFile('second_todo_images')) {
+    foreach ($request->file('second_todo_images') as $file) {
+        if ($file->isValid()) {
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads'), $filename);
+            $secondImages[] = $filename;
+        }
+    }
+}
+
+// 4.3 Delete removed second images from disk
+$oldSecondImages = json_decode($info->info_two, true) ?? [];
+$deletedSecondImages = array_diff($oldSecondImages, $secondImages);
+foreach ($deletedSecondImages as $imageToDelete) {
+    $path = public_path('uploads/' . $imageToDelete);
+    if (file_exists($path)) {
+        unlink($path);
+    }
+}
+
+$info->info_two = json_encode($secondImages);
+
+        $info->save();
+        return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    $second_todo_images = json_decode($info->info_two);
+    $row = json_decode($info->info_one);
+    $todo_images = json_decode($info->info_three);
+
+    return view('admin.about.haicl_strengthening_partners', compact('info', 'row', 'todo_images','second_todo_images'));
+}
 
     public function infrastructureThinking(Request $request)
     {

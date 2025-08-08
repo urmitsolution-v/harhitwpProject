@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">New Insight</h4>
+                            <h4 class="mb-sm-0 font-size-18">New Entrepreneurship</h4>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Insight Details</h4>
+                                <h4 class="card-title mb-4">Entrepreneurship Details</h4>
 
 
                                 @if(Session::has('success'))
@@ -48,7 +48,7 @@
                                     @csrf
                                     <div class="row">
                                         
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="formrow-firstname-input" class="form-label">Title</label>
                                                 <input type="text" class="form-control" name="title" value="{{ old('title') }}" id="sluggenrate" placeholder="">
@@ -58,34 +58,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Slug</label>
-                                                <input type="text" class="form-control" name="slug" value="{{ old('slug') }}" id="slugbox" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <script>
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                const sluggenrate = document.getElementById('sluggenrate');
-                                                const slugbox = document.getElementById('slugbox');
-
-                                                sluggenrate.addEventListener('input', function () {
-                                                    const slug = sluggenrate.value
-                                                        .toLowerCase()
-                                                        .trim()
-                                                        .replace(/[^a-z0-9\s-]/g, '')
-                                                        .replace(/\s+/g, '-')
-                                                        .replace(/-+/g, '-');
-
-                                                    slugbox.value = slug;
-                                                });
-                                            });
-                                        </script>
-
-
-
-                                        <div class="col-md-4">
+                                       
+                                        <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="formrow-firstname-input" class="form-label">Upload  Image</label>
                                                 <input type="file" accept="image/*" name="image" class="form-control" id="formrow-firstname-input"
@@ -101,39 +75,7 @@
                                                 class="form-control editor"></textarea>
                                         </div>
                                         
-                                        <div class="col-md-12 mb-3">
-                                            <label for="title" class="form-label">Description</label>
-                                            <textarea name="description" id="editor" cols="30" rows="10" placeholder="Description"
-                                                class="form-control editor">{{ '' }}</textarea>
-                                        </div>
-
-                                            <div class="col-12">
-                                                <h4 class="card-title mb-4">Seo Details</h4>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="title" class="form-label">Meta Title</label>
-                                                    <input type="text" class="form-control" name="meta_title" value="{{ old('meta_title') }}" id="title" placeholder="">
-                                                </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-
-                                                <div class="mb-3">
-                                                        <label for="title" class="form-label">Meta Tags</label>
-                                                        <input type="text" class="form-control" name="meta_tags" value="{{ old('meta_tags') }}" id="title" placeholder="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 mb-3">
-                                                        <label for="title" class="form-label">Meta Description</label>
-                                                        <textarea name="meta_description" cols="10" rows="2" placeholder="Description"
-                                                            class="form-control">{{ old('meta_description') }}</textarea>
-                                                </div>
-
-
-
+                                      
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label for="formrow-firstname-input" class="form-label">Status</label>
@@ -147,20 +89,7 @@
                                                     </div>
                                                 </div>
 
-                                                 <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-firstname-input" class="form-label">Is Featured</label>
-                                                       <select name="show_home_page" class="form-select" id="">
-                                                        <option value="Y">Yes</option>
-                                                        <option value="N">No</option>
-                                                       </select>
-                                                       @error('show_home_page')
-                                                       <div class="text-danger mt-1">{{ $message }}</div>
-                                                   @enderror
-                                                    </div>
-                                                </div>
-
-
+                                        
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary w-md">Submit</button>
                                         </div>

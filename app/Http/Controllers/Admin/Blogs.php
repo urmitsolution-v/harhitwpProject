@@ -254,7 +254,7 @@ class Blogs extends Controller
                     if (isset($row->image)) {
                         $image = $row->image;
                     }else{
-                        $image = $row->image;
+                        $image = 'no_image';
                     }
                     return '<a href="/admin/delete/insights/'.$row->id.'/'.$image.'" onclick="return confirm(\'Are you sure? Delete this.\')" class="btn btn-sm btn-danger">
             <i class="mdi mdi-delete">Delete</i>

@@ -89,8 +89,24 @@
                                              <a class="sub-nav-link" href="/admin/eligibility-banner">Eligibility Banner</a>
                                         </li>
                                          <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/impact">Impact</a>
+                                             <a class="sub-nav-link" href="/admin/entrepreneurship">Entrepreneurship</a>
                                         </li>
+                                         <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/admin/quality-products">Quality Products</a>
+                                        </li>
+                                           <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/admin/become-a-part">Become A Part</a>
+                                        </li>
+                                      
+                                      
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/admin/best-sectoion">We’re the Best & Ecosystem</a>
+                                        </li>
+                                      
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/admin/haicl-strengthening-partners">Haicl Strengthening Partners</a>
+                                        </li>
+
                                          <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/event-highlight">Event Highlight</a>
                                         </li>

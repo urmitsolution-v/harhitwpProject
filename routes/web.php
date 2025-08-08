@@ -123,6 +123,11 @@ Route::middleware([Superadmin::class])->prefix('admin')->group(function () {
     Route::match(['get', 'post'], '/about-us', [Pagecontroller::class, 'aboutus'])->name('aboutus');
     Route::match(['get', 'post'], '/stores', [Pagecontroller::class, 'stores'])->name('stores');
     Route::match(['get', 'post'], '/eligibility-banner', [Pagecontroller::class, 'eligibilitybanner'])->name('eligibility-banner');
+    Route::match(['get', 'post'], '/entrepreneurship', [Pagecontroller::class, 'entrepreneurship'])->name('entrepreneurship');
+    Route::match(['get', 'post'], '/quality-products', [Pagecontroller::class, 'qualityproducts'])->name('qualityproducts');
+    Route::match(['get', 'post'], '/become-a-part', [Pagecontroller::class, 'becomeapart'])->name('becomeapart');
+    Route::match(['get', 'post'], '/haicl-strengthening-partners', [Pagecontroller::class, 'haicl_strengthening_partners'])->name('haicl_strengthening_partners');
+    Route::match(['get', 'post'], '/best-sectoion', [Pagecontroller::class, 'bestSectoion'])->name('bestSectoion');
     Route::match(['get', 'post'], '/infrastructure-thinking', [Pagecontroller::class, 'infrastructureThinking'])->name('infrastructure-thinking');
     Route::match(['get', 'post'], '/government-solutions', [Pagecontroller::class, 'governmentSolutions'])->name('government-solutions');
     Route::match(['get', 'post'], '/impact', [Pagecontroller::class, 'impact'])->name('impact');
