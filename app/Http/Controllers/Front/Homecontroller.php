@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Banners;
 use App\Models\Info;
 use App\Models\Insights;
+use App\Models\Publication;
+use App\Models\Contact;
+use App\Models\Investment;
 
+use Illuminate\Support\Facades\Mail;
 class Homecontroller extends Controller
 {
 
@@ -53,7 +57,10 @@ class Homecontroller extends Controller
     }
  
     public function training_material(){
-     return view('website.training_material');
+    $dd = Investment::firstorfail();
+        $data['video_tranning'] = $dd->todo_list;
+        
+     return view('website.training_material',$data);
     }
  
  
@@ -80,10 +87,72 @@ class Homecontroller extends Controller
      return view('website.commingsoon');
     }
     public function harhithnews(){
-     return view('website.harhithnews');
+        $data['news'] = Publication::select('image')->latest()->get();
+     return view('website.harhithnews',$data);
     }
  
-    public function contactus(){
+    public function contactus(Request $request){
+        if($request->method() == "POST"){
+            
+
+            $request->validate([
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'email' => 'required|email',
+                'phone' => 'required',
+            ]);
+        
+            
+            $contact = new Contact;
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $contact->subject = $request->subject;
+            //$contact->captcha = $request->captcha;
+            $contact->message = $request->message;
+            //dd($contact);
+            $contact->save();
+
+
+            $data = [
+                'name'    => $request->name,
+                'email'   => $request->email,
+                'phone'   => $request->phone,
+                'subject' => $request->subject,
+                'message' => $request->message,
+            ];
+        
+            Mail::html("
+            <html>
+            <head>
+                <style>
+                    body { font-family: Arial, sans-serif; color: #333; }
+                    .container { padding: 20px; border: 1px solid #ddd; background: #f9f9f9; }
+                    .header { font-size: 20px; font-weight: bold; color: #007BFF; }
+                    .info { margin: 10px 0; font-size: 16px; }
+                    .message { font-size: 14px; color: #555; padding: 10px; background: #fff; border-radius: 5px; }
+                </style>
+            </head>
+            <body>
+                <div class='container'>
+                    <div class='header'>New Contact Message</div>
+                    <div class='info'><strong>Name:</strong> {$data['name']}</div>
+                    <div class='info'><strong>Email:</strong> {$data['email']}</div>
+                    <div class='info'><strong>Phone:</strong> {$data['phone']}</div>
+                    <div class='info'><strong>Subject:</strong> {$data['subject']}</div>
+                    <div class='message'>{$data['message']}</div>
+                </div>
+            </body>
+            </html>
+        ", function ($mail) use ($data) {
+            $mail->to('rr8637217@gmail.com')
+                ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
+                ->subject($data['subject']);
+        });
+        
+
+            return redirect()->back()->with('success', 'Your Enquired Recevied. Our team will contact you soon.');
+        }
      return view('website.contactus');
     }
   

@@ -8,61 +8,11 @@
 
             <!-- Page Header -->
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h4 class="mb-0">Publications Page Settings</h4>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#publicationModal" onclick="openPublicationModal()">+ New Publication</button>
+                <h4 class="mb-0">{{ env('APP_NAME') }} News</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#publicationModal" onclick="openPublicationModal()">+ New {{ env('APP_NAME') }} News</button>
             </div>
-
-            <!-- Basic Info & SEO Section -->
-          <form method="POST" action="{{ route('publications.basic_info') }}">
-    @csrf
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">Basic Information</div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label class="form-label">Page Title</label>
-                        <input type="text" name="title" class="form-control" required value="{{ old('title', $setting->title ?? '') }}">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Sub Description</label>
-                        <textarea name="sub_description" rows="4" class="form-control">{{ old('sub_description', $setting->sub_description ?? '') }}</textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEO -->
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">SEO Information</div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label class="form-label">Meta Title</label>
-                        <input type="text" name="meta_title" class="form-control" value="{{ old('meta_title', $setting->meta_title ?? '') }}">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Meta Tags</label>
-                        <input type="text" name="meta_tags" class="form-control" value="{{ old('meta_tags', $setting->meta_tags ?? '') }}">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Meta Description</label>
-                        <textarea name="meta_description" rows="3" class="form-control">{{ old('meta_description', $setting->meta_description ?? '') }}</textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 text-end mt-3">
-            <button type="submit" class="btn btn-success">Update Info</button>
-        </div>
-    </div>
-</form>
-
-
             <!-- Publications Table -->
-            <div class="card mt-5">
+            <div class="card mt-0">
                 
                 @if ($errors->any())
     <div class="alert alert-danger">
@@ -74,7 +24,7 @@
     </div>
 @endif
 
-                <div class="card-header">All Publications</div>
+                <div class="card-header">All {{ env('APP_NAME') }} News</div>
                 <div class="card-body">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -132,34 +82,13 @@
                                     <label>Title</label>
                                     <input type="text" name="title" class="form-control" required id="pub_title">
                                 </div>
-                                <div class="mb-3">
-                                    <label>Description</label>
-                                    <textarea name="description" rows="3" class="form-control" id="pub_description"></textarea>
-                                </div>
-                                <!--<div class="mb-3">-->
-                                <!--    <label>Published By</label>-->
-                                <!--    <input type="text" name="published_by" class="form-control" id="pub_published_by">-->
-                                <!--</div>-->
+                              
                                 <div class="mb-3">
                                     <label>Image</label>
                                     <input type="file" name="image" class="form-control">
                                     <div id="pub_image_preview" class="mt-2"></div>
                                 </div>
-                                <div class="mb-3">
-                                    <label>Button Name</label>
-                                    <input type="text" name="button_name" class="form-control" id="pub_button_name">
-                                </div>
-                                <div class="mb-3">
-                                    <label>Button URL</label>
-                                    <input type="url" name="button_url" class="form-control" id="pub_button_url">
-                                </div>
-                                <div class="mb-3">
-                                    <label>Open Link In</label>
-                                    <select name="target" class="form-select" id="pub_target">
-                                        <option value="_self">Same Tab</option>
-                                        <option value="_blank">New Tab</option>
-                                    </select>
-                                </div>
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success">Save Publication</button>

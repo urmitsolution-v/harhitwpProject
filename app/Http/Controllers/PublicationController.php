@@ -23,17 +23,16 @@ class PublicationController extends Controller
 {
     $request->validate([
         'title'         => 'required',
-        'description'   => 'nullable|string',
-        'published_by'  => 'nullable',
-        'button_name'   => 'nullable',
-        'button_url'    => 'nullable|url',
-        'target'        => 'in:_self,_blank',
+        // 'description'   => 'nullable|string',
+        // 'published_by'  => 'nullable',
+        // 'button_name'   => 'nullable',
+        // 'button_url'    => 'nullable|url',
+        // 'target'        => 'in:_self,_blank',
         'image'         => 'nullable|max:2048',
     ]);
 
     $data = $request->only([
-        'title', 'description', 'published_by',
-        'button_name', 'button_url', 'target'
+        'title'
     ]);
 
     // Ensure folder exists

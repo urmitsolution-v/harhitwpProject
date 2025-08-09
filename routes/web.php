@@ -35,7 +35,7 @@ Route::get('/store-fitment-catalogue', [Homecontroller::class, 'store_fitmentcat
 Route::get('/locate-store', [Homecontroller::class, 'locatestore'])->name('locatestore');
 Route::get('/discounts', [Homecontroller::class, 'discounts'])->name('discounts');
 Route::get('/har-hith-news', [Homecontroller::class, 'harhithnews'])->name('arhith-news');
-Route::get('/contact-us', [Homecontroller::class, 'contactus'])->name('contactus');
+Route::match(['get','post'],'/contact-us', [Homecontroller::class, 'contactus'])->name('contactus');
 
 
 Route::get('/franchise-registration', [Homecontroller::class, 'franchise_registration'])->name('franchise_registration');
@@ -89,13 +89,11 @@ Route::middleware([Superadmin::class])->prefix('admin')->group(function () {
     Route::match(['get', 'post'], '/home-image', [Pagecontroller::class, 'homeimage'])->name('home-image');
     Route::match(['get', 'post'], '/have-a-look', [Pagecontroller::class, 'have_a_look'])->name('have_a_look');
     Route::match(['get', 'post'], '/news-articles', [Pagecontroller::class, 'news'])->name('news-articles');
-
-
     Route::match(['get', 'post'], '/global-dpi-summit', [Pagecontroller::class, 'globalDpiSummit'])->name('global-dpi-summit');
-      Route::post('/global-dpi-summit', [Pagecontroller::class, 'store_globaldpisummit'])->name('global-dpi-summit.store');
+    Route::post('/global-dpi-summit', [Pagecontroller::class, 'store_globaldpisummit'])->name('global-dpi-summit.store');
 
-      Route::get('/inclusivity-pulse-for-dpi', [Pagecontroller::class, 'store_inclusivitypulsefordpi'])->name('inclusivity-pulse-for-dpi.store');
-      Route::post('/inclusivity-pulse-for-dpi-submit', [InclusivityPulseController::class, 'submitpulse'])->name('pulse-for-dpi.submit');
+    Route::get('/inclusivity-pulse-for-dpi', [Pagecontroller::class, 'store_inclusivitypulsefordpi'])->name('inclusivity-pulse-for-dpi.store');
+    Route::post('/inclusivity-pulse-for-dpi-submit', [InclusivityPulseController::class, 'submitpulse'])->name('pulse-for-dpi.submit');
 
     // Route::match(['get', 'post'], '/faqs', [Pagecontroller::class, 'faq'])->name('faq');
 

@@ -26,13 +26,6 @@
                                 <h4 class="card-title mb-4">General Setting</h4>
 
 
-                                @if(Session::has('success'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <i class="mdi mdi-check-all me-2"></i>
-                                    {{ Session::get('success') }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                                @endif
 
                                 <form method="post" enctype="multipart/form-data" >
                                     @csrf
@@ -54,7 +47,7 @@
 
                                         <div class="col-sm-6 col-md-4">
                                             <div class="mb-3">
-                                                <label for="contact_phone" class="form-label">Location</label>
+                                                <label for="contact_phone" class="form-label">Head Office</label>
                                                 <input type="text" class="form-control" name="location" value="{{ $row->location }}" id="contact_phone" placeholder="">
                                             </div>
                                         </div>
@@ -66,6 +59,14 @@
                                                 <textarea id="" class="form-control" cols="30" name="footer_location" rows="5">{{ $row->footer_location }}</textarea>
                                             </div>
                                         </div>
+
+                                         <div class="col-sm-6 col-md-6">
+                                            <div class="mb-3">
+                                                <label for="contact_phone" class="form-label">Timing Hours</label>
+                                                <textarea id="" class="form-control" cols="30" name="timing_hours" rows="5">{{ $row->timing_hours ?? "" }}</textarea>
+                                            </div>
+                                        </div>
+
                                         <div class="col-sm-6 col-md-6">
                                             <div class="mb-3">
                                                 <label for="map_address" class="form-label">Map Iframe</label>
@@ -94,7 +95,7 @@
                                                         <input type="text" class="form-control" name="facebook" value="{{ $row->facebook }}" id="title" placeholder="">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-md-3">
+                                                {{-- <div class="col-sm-6 col-md-3">
 
                                                 <div class="mb-3">
                                                         <label for="title" class="form-label">linkedin</label>
@@ -115,10 +116,33 @@
                                                     </div>
 
                                                 </div>
-                                             
+                                              --}}
 
 
                                     <div class="row">
+
+                                         <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formrow-firstname-input" class="form-label">Upload Image</label>
+                                                <input type="file" accept="image/*" name="image" class="form-control" id="formrow-firstname-input"
+                                                    placeholder="">
+                                                    @if ($data->image)
+                                                        <img src="{{ url('uploads') }}/{{ $data->image }}" class="img-thumbnail mt-2" width="200" height="200" style="object-fit: cover;" alt="">
+                                                    @endif
+                                            </div>
+                                        </div>
+
+                                           <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="formrow-firstname-input" class="form-label">Upload Image</label>
+                                                <input type="file" accept="image/*" name="favicon" class="form-control" id="formrow-firstname-input"
+                                                    placeholder="">
+                                                    @if ($data->favicon)
+                                                        <img src="{{ url('uploads') }}/{{ $data->favicon }}" class="img-thumbnail mt-2" width="200" height="200" style="object-fit: cover;" alt="">
+                                                    @endif
+                                            </div>
+                                        </div>
+
 
                                             <div class="col-12">
                                                 <h4 class="card-title mb-4">Seo Details</h4>

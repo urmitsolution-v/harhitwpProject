@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,12 +11,15 @@
       margin-top: 0rem;
       margin-left: 2rem;
     }
+    .wd-logo img{
+            object-fit: contain;
+    }
   </style>
-		<title>Harhith  Build  grow your business</title>
+		<title>{{ meta_title() ?? "" }}</title>
 <meta name='robots' content='max-image-preview:large' />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-<link rel="alternate" type="application/rss+xml" title="Harhith &raquo; Feed" href="feed//" />
-<link rel="alternate" type="application/rss+xml" title="Harhith &raquo; Comments Feed" href="comments/feed//" />
+<link rel="alternate" type="application/rss+xml" title="{{ env('APP_NAME') }} &raquo; Feed" href="feed//" />
+<link rel="alternate" type="application/rss+xml" title="{{ env('APP_NAME') }} &raquo; Comments Feed" href="comments/feed//" />
 <style class='custom-scrollbar' type='text/css'>@media only screen and (min-width: 1px) {page_id=10522 { max-height: 100px; overflow-y: auto; max-width: 100px; white-space: pre-wrap; overflow-x: auto;}}</style><link rel='stylesheet' id='wp-block-library-css' href='{{ url('website') }}/wp-includes/css/dist/block-library/style.min6c2d.css?ver=6.8.2' type='text/css' media='all' />
 <style id='classic-theme-styles-inline-css' type='text/css'>
 /*! This file is auto-generated */
@@ -53,13 +56,73 @@
 <script type="text/javascript" src="{{ url('website') }}/wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <script type="text/javascript" src="{{ url('website') }}/wp-content/themes/woodmart/js/libs/device.min6c2d.js?ver=6.8.2" id="wd-device-library-js"></script>
 <link rel="https://api.w.org/" href="wp-json//" /><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/8190.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
-<meta name="generator" content="WordPress 6.8.2" />
-<link rel="canonical" href="/" />
-<link rel='shortlink' href='/' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embedd268.json?url=https%3A%2F%2Fharhith.com%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embededcc?url=https%3A%2F%2Fharhith.com%2F&amp;format=xml" />
 
-	<style id="zeno-font-resizer" type="text/css">
+ <meta name="description" content="{{ meta_description() ?? "" }}">
+  <meta name="keywords" content="{{ meta_tags() ?? "" }}">
+  <meta name="author" content="{{ env('APP_NAME') }}">
+  
+  <style id="zeno-font-resizer" type="text/css">
+
+    /* Toast Container */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4caf50, #43a047);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+    max-width: 350px;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.4s ease;
+}
+
+/* Toast visible state */
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hidden state */
+.toast.hidden {
+    display: none;
+}
+
+/* Toast content layout */
+.toast-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Icon */
+.toast-icon {
+    font-size: 18px;
+}
+
+/* Close button */
+.toast-close {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+/* Message */
+.toast-message {
+    flex: 1;
+    font-size: 15px;
+}
+
+
 		p.zeno_font_resizer .screen-reader-text {
 			border: 0;
 			clip: rect(1px, 1px, 1px, 1px);
@@ -133,7 +196,18 @@ function setREVStartSize(e){
     </head>
 
 <body class="home wp-singular page-template-default page page-id-8190 wp-theme-woodmart wrapper-full-width  categories-accordion-on woodmart-ajax-shop-on offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-6.7.0 vc_responsive">
-				
+			
+    
+    <!-- Toast Container -->
+<div id="custom-toast" class="toast hidden">
+    <div class="toast-content">
+        <span class="toast-icon">✔</span>
+        <span class="toast-message" id="toast-message">Success message</span>
+        <span class="toast-close" onclick="hideToast()">×</span>
+    </div>
+</div>
+
+
 		
 	<div class="website-wrapper">
 
@@ -170,9 +244,9 @@ function setREVStartSize(e){
 	<div class="site-logo 
  wd-switch-logo">
 	<a href="/" class="wd-logo wd-main-logo" rel="home">
-		<img width="600" height="204" src="{{ url('website') }}/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background.png" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" fetchpriority="high" srcset="https://harhith.com/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background.png 600w, https://harhith.com/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background-300x102.png 300w" sizes="(max-width: 600px) 100vw, 600px" />	</a>
+		<img width="600" height="204" src="{{ url('uploads') }}/{{ weblogo() ?? "" }}" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" fetchpriority="high" srcset="{{ url('uploads') }}/{{ weblogo() ?? "" }}"" sizes="(max-width: 600px) 100vw, 600px" />	</a>
 					<a href="/" class="wd-logo wd-sticky-logo" rel="home">
-			<img width="600" height="204" src="{{ url('website') }}/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background.png" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" srcset="https://harhith.com/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background.png 600w, https://harhith.com/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background-300x102.png 300w" sizes="(max-width: 600px) 100vw, 600px" />		</a>
+			<img width="600" height="204" src="{{ url('uploads') }}/{{ weblogo() ?? "" }}" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" srcset="{{ url('uploads') }}/{{ weblogo() ?? "" }}"" sizes="(max-width: 600px) 100vw, 600px" />		</a>
 	</div>
 </div>
 <div class="whb-column whb-col-right whb-visible-lg">
@@ -204,15 +278,15 @@ function setREVStartSize(e){
 	<div class="site-logo 
  wd-switch-logo">
 	<a href="/" class="wd-logo wd-main-logo" rel="home">
-		<img width="30326" height="10300" src="{{ url('website') }}/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background-1.svg" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" />	</a>
+		<img width="30326" height="10300" src="{{ url('uploads') }}/{{ weblogo() ?? "" }}" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" />	</a>
 					<a href="/" class="wd-logo wd-sticky-logo" rel="home">
-			<img width="30326" height="10300" src="{{ url('website') }}/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background-1.svg" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" />		</a>
+			<img width="30326" height="10300" src="{{ url('uploads') }}/{{ weblogo() ?? "" }}" class="attachment-full size-full" alt="" style="max-width:150px;" decoding="async" />		</a>
 	</div>
 </div>
 <div class="whb-column whb-mobile-center whb-hidden-lg whb-empty-column">
 	</div>
 <div class="whb-column whb-mobile-right whb-hidden-lg">
-	<div id="wd-6892fe273af1b" class="wd-button-wrapper text-center"><a href="https://www.facebook.com/109707494739406/" title="" target="_blank" class="btn btn-scheme-light btn-scheme-hover-light btn-style-default btn-shape-rectangle btn-size-extra-small btn-icon-pos-left"><span class="wd-btn-icon"><span class="wd-icon fab fa-facebook"></span></span></a></div><div id="wd-6892fe273af48" class="wd-button-wrapper text-center"><a href="https://twitter.com/HarHithStore" title="" target="_blank" class="btn btn-scheme-light btn-scheme-hover-light btn-style-default btn-shape-rectangle btn-size-extra-small btn-icon-pos-left"><span class="wd-btn-icon"><span class="wd-icon fab fa-twitter"></span></span></a></div><div class="wd-tools-element wd-header-mobile-nav wd-style-text">
+	<div id="wd-6892fe273af1b" class="wd-button-wrapper text-center"><a href="{{ facebook() ?? "" }}" title="" target="_blank" class="btn btn-scheme-light btn-scheme-hover-light btn-style-default btn-shape-rectangle btn-size-extra-small btn-icon-pos-left"><span class="wd-btn-icon"><span class="wd-icon fab fa-facebook"></span></span></a></div><div id="wd-6892fe273af48" class="wd-button-wrapper text-center"><a href="{{ twitter() ?? "" }}" title="" target="_blank" class="btn btn-scheme-light btn-scheme-hover-light btn-style-default btn-shape-rectangle btn-size-extra-small btn-icon-pos-left"><span class="wd-btn-icon"><span class="wd-icon fab fa-twitter"></span></span></a></div><div class="wd-tools-element wd-header-mobile-nav wd-style-text">
 	<a href="#" rel="noffollow">
 		<span class="wd-tools-icon">
 					</span>
@@ -280,9 +354,9 @@ function setREVStartSize(e){
 </ul></div><!--END MAIN-NAV-->
 </div>
 <div class="whb-column whb-col-right whb-visible-lg">
-	<div id="wd-6892fe27454b3" class="wd-button-wrapper text-left"><a href="harhith_forms/registration.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-default">Register</a></div><div id="wd-6892fe27454df" class="wd-button-wrapper text-left"><a href="harhith_forms/login.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-default">Login</a></div></div>
+	<div id="wd-6892fe27454b3" class="wd-button-wrapper text-left"><a href="/franchise-registration" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-default">Register</a></div><div id="wd-6892fe27454df" class="wd-button-wrapper text-left"><a href="harhith_forms/login.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-default">Login</a></div></div>
 <div class="whb-column whb-col-mobile whb-hidden-lg">
-	<div id="wd-6892fe2745515" class="wd-button-wrapper text-center"><a href="harhith_forms/registration.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-small">Register</a></div><div id="wd-6892fe2745535" class="wd-button-wrapper text-center"><a href="harhith_forms/login.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-small">Login</a></div></div>
+	<div id="wd-6892fe2745515" class="wd-button-wrapper text-center"><a href="/franchise-registration" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-small">Register</a></div><div id="wd-6892fe2745535" class="wd-button-wrapper text-center"><a href="harhith_forms/login.html" title="" class="btn btn-scheme-light btn-scheme-hover-light btn-style-3d btn-shape-semi-round btn-size-small">Login</a></div></div>
 		</div>
 	</div>
 </div>
@@ -304,24 +378,21 @@ function setREVStartSize(e){
                 <div id="text-9" class="wd-widget widget footer-widget  widget_text">
                     <div class="textwidget">
                         <div class="footer-logo" style="max-width: 80%; margin-bottom: 10px;"><img
-                                src="{{ url('website') }}/wp-content/uploads/2021/07/Final-Har-hith-Logo-With-yellow-Background-1.svg"
+                                src="{{ url('uploads') }}/{{ weblogo() ?? "" }}"
                                 style="margin-bottom: 10px;" /></div><b><u>Head Office :</u></b>
                         <div style="line-height: 2;"><i class="fa fa-location-arrow"
                                 style="width: 15px; text-align: center; margin-right: 4px;"></i>
-                            Haryana Agro Industries Corporation Limited
-                            <br>Bays No. 15-20, Sector-4,<br>Panchkula ( Haryana ) - 134112
+                            {{ location() ?? "" }}
+                            <br><?= footer_location() ?? "" ?>
                             <br><i class="fa fa-mobile" style="width: 15px; text-align: center; margin-right: 4px;"></i>
-                            <a href="tel:9517951711">9517 9517 11</a><br><i class="fa fa-envelope-o"
+                            <a href="tel:{{ phone() ?? "" }}">{{ phone() ?? "" }}</a><br><i class="fa fa-envelope-o"
                                 style="width: 15px; text-align: center; margin-right: 4px;"></i><a
-                                href="mailto:harhithretail@gmail.com">harhithretail@gmail.com</a> </div>
+                                href="mailto:{{ email() ?? "" }}">{{ email() ?? "" }}</a> </div>
 
                         <div class="contact_in d-inline-flex flex-column align-items-start">
                             <span>Call Franchisee Support Team</span>
-                            <label style="font-size:20px; font-weight: 800;"><a href="tel:9517951711">9517 9517
-                                    11</a></label>
-                            <div>Support Desk Working Hours<br>
-                                MONDAY TO SUNDAY<br>
-                                9:00 AM TO 6:00 PM</div>
+                            <label style="font-size:20px; font-weight: 800;"><a href="tel:{{ phone() ?? "" }}">{{ phone() ?? "" }}</a></label>
+                            <div><?= timing_hours() ?? "" ?></div>
                         </div>
                     </div>
                 </div>
@@ -399,10 +470,10 @@ function setREVStartSize(e){
                     <div class="textwidget custom-html-widget">
                         <div class="social-links">
 
-                            <a target="_blank noopener nofollow" href="https://www.facebook.com/109707494739406/"> <img
+                            <a target="_blank noopener nofollow" href="{{ facebook() ?? "" }}"> <img
                                     src="{{ url('website') }}/wp-content/uploads/2021/05/facebook.svg" alt=""
                                     class="img-fluid"></a>
-                            <a target="_blank noopener nofollow" href="https://twitter.com/HarHithStore"> <img
+                            <a target="_blank noopener nofollow" href="{{ twitter() ?? "" }}"> <img
                                     src="{{ url('website') }}/wp-content/uploads/2021/05/twitter.svg" alt=""
                                     class="img-fluid"></a>
                         </div>
@@ -416,10 +487,9 @@ function setREVStartSize(e){
         <div class="container">
             <div class="min-footer">
                 <div class="col-left set-cont-mb-s reset-last-child">
-                    <small><strong>Copyright</strong></a> <i class="fa fa-copyright"></i> 2021 Har-Hith. All Rights
-                        Reserved <a href="https://www.haic.co.in/" target="_blank"
-                            rel="nofollow noopener"><strong>Haryana Agro Industries Corporation
-                                Limited</strong></a></small>
+                    <small><strong>Copyright</strong></a> <i class="fa fa-copyright"></i> {{ date('Y') }} {{env('APP_NAME')}}. All Rights
+                        Reserved <a href="/" target="_blank"
+                            rel="nofollow noopener"><strong>{{env('APP_NAME')}}</strong></a></small>
                 </div>
                 <div class="col-right set-cont-mb-s reset-last-child">
                     <small>Browser support : Firefox 45 + | Google Chrome 7.0 + | Internet Explorer 9.0+ | Safari
@@ -477,7 +547,7 @@ function setREVStartSize(e){
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9708 item-level-1"><a
                         href="/training-material" class="woodmart-nav-link">TRAINING MATERIAL</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9206 item-level-1"><a
-                        href="harhith_forms/registration.html" class="woodmart-nav-link">APPLY FOR FRANCHISEE</a></li>
+                        href="/franchise-registration" class="woodmart-nav-link">APPLY FOR FRANCHISEE</a></li>
             </ul>
         </li>
         <li
@@ -1055,6 +1125,38 @@ function setREVStartSize(e){
         });
     });
 </script>
+
+
+<script>
+    function showToast(message, duration = 3000) {
+    const toast = document.getElementById('custom-toast');
+    const msg = document.getElementById('toast-message');
+    
+    msg.textContent = message;
+    toast.classList.remove('hidden');
+    
+    // Trigger show animation
+    setTimeout(() => toast.classList.add('show'), 10);
+    
+    // Hide after duration
+    setTimeout(() => hideToast(), duration);
+}
+
+function hideToast() {
+    const toast = document.getElementById('custom-toast');
+    toast.classList.remove('show');
+    setTimeout(() => toast.classList.add('hidden'), 300);
+}
+
+</script>
+
+@if(session('success'))
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        showToast("{{ session('success') }}");
+    });
+</script>
+@endif
 
 </body>
 

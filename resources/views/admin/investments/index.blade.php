@@ -10,7 +10,7 @@
                 @csrf
 
                 <div class="row">
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <!-- Title -->
                         <div class="card">
                             <div class="card-body">
@@ -51,13 +51,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
                                         <div class="mb-3">
-                                    <label class="form-label">To-Do List</label>
+                                    <label class="form-label">Video Training List</label>
                                     <div id="todo_wrapper">
                                         @if(!empty($investment->todo_list))
                                             @foreach($investment->todo_list as $item)
@@ -104,28 +104,28 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
 
 <script>
-    function initializeSummernote(selector) {
-        $(selector).summernote({
-            height: 250,
-            toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-                ['fontname', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['insert', ['picture', 'link', 'video', 'hr']],
-                ['view', ['fullscreen', 'codeview', 'help']],
-            ],
-            fontNames: ['Poppins'],
-            fontNamesIgnoreCheck: ['Poppins'],
-            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '48', '64']
-        });
-    }
+    // function initializeSummernote(selector) {
+    //     $(selector).summernote({
+    //         height: 250,
+    //         toolbar: [
+    //             ['style', ['style']],
+    //             ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+    //             ['fontname', ['fontname']],
+    //             ['fontsize', ['fontsize']],
+    //             ['color', ['color']],
+    //             ['para', ['ul', 'ol', 'paragraph']],
+    //             ['insert', ['picture', 'link', 'video', 'hr']],
+    //             ['view', ['fullscreen', 'codeview', 'help']],
+    //         ],
+    //         fontNames: ['Poppins'],
+    //         fontNamesIgnoreCheck: ['Poppins'],
+    //         fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '48', '64']
+    //     });
+    // }
 
     $(document).ready(function () {
         // Initialize existing editors
-        initializeSummernote('.todo-description');
+        // initializeSummernote('.todo-description');
 
         // Add more todo items
         $('#add_more_todo').click(function () {
@@ -137,15 +137,15 @@
                 </div>
             `);
             $('#todo_wrapper').append(newItem);
-            initializeSummernote(newItem.find('.todo-description'));
+            // initializeSummernote(newItem.find('.todo-description'));
         });
 
         // Remove todo item and destroy Summernote instance
         $(document).on('click', '.remove-todo', function () {
-            let editor = $(this).closest('.todo-item').find('.todo-description');
-            if (editor.hasClass('summernote')) {
-                editor.summernote('destroy');
-            }
+            // let editor = $(this).closest('.todo-item').find('.todo-description');
+            // if (editor.hasClass('summernote')) {
+            //     editor.summernote('destroy');
+            // }
             $(this).closest('.todo-item').remove();
         });
     });

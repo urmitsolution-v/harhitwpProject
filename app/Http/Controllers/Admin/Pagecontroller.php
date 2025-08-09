@@ -757,6 +757,7 @@ class Pagecontroller extends Controller
                 'linkedin' => $request->linkedin,
                 'youtube' => $request->youtube,
                 'instagram' => $request->instagram,
+                'timing_hours' => $request->timing_hours,
             ];
 
             $data->info_one = json_encode($info);
@@ -1887,9 +1888,9 @@ public function investments(Request $request)
 
     if ($request->isMethod('post')) {
         $data = $request->validate([
-            'title' => 'required|string',
+            'title' => 'nullable|string',
             'sub_description' => 'nullable|string',
-            'todo_title.*' => 'required|string',
+            'todo_title.*' => 'nullable|string',
             'todo_description.*' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_tags' => 'nullable|string',
@@ -1906,7 +1907,7 @@ public function investments(Request $request)
 
         if ($investment) {
             $investment->update([
-                'title' => $data['title'],
+                'title' => $data['title'] ?? "",
                 'sub_description' => $data['sub_description'] ?? '',
                 'todo_list' => $todoList,
                 'meta_title' => $data['meta_title'] ?? '',

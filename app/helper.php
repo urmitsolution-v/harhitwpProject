@@ -320,6 +320,29 @@ function location()
     }
 }
 
+
+function footer_location()
+{
+    $data = Info::where('id', 5)->first();
+    $mdata = json_decode($data->info_one);
+    if ($mdata) {
+        return $mdata->footer_location;
+    } else {
+        return '';
+    }
+}
+
+function timing_hours()
+{
+    $data = Info::where('id', 5)->first();
+    $mdata = json_decode($data->info_one);
+    if ($mdata) {
+        return $mdata->timing_hours ?? "";
+    } else {
+        return '';
+    }
+}
+
 function twitter()
 {
     $data = Info::where('id', 5)->first();

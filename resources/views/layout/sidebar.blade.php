@@ -107,7 +107,7 @@
                                              <a class="sub-nav-link" href="/admin/haicl-strengthening-partners">Haicl Strengthening Partners</a>
                                         </li>
 
-                                         <li class="sub-nav-item">
+                                         {{-- <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/event-highlight">Event Highlight</a>
                                         </li>
                                           <li class="sub-nav-item">
@@ -121,7 +121,7 @@
                                         </li>
                                          <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/partners?type=partner">Partners</a>
-                                        </li>
+                                        </li> --}}
                                    </ul>
                               </div>
                          </li> 
@@ -133,31 +133,21 @@
                                        <iconify-icon icon="mdi:account-group-outline"></iconify-icon>
 
                                    </span>
-                                   <span class="nav-text">About Us </span>
+                                   <span class="nav-text">More Pages</span>
                               </a>
                               <div class="collapse" id="sidebaraboutus">
                                    <ul class="nav sub-navbar-nav">
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/who-we-are">Who We Are</a>
-                                        </li>
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/teams">Teams</a>
+                                         <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/admin/investments">Video Training</a>
                                         </li>
                                          <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/investments">Investments</a>
-                                        </li>
-                                        
-                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/partners?type=investment">Our Grantees</a>
-                                        </li>
-                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/admin/careers">Careers</a>
+                                             <a class="sub-nav-link" href="/admin/publications">{{ env('APP_NAME') }} News</a>
                                         </li>
                                    </ul>
                               </div>
                          </li> 
 
-                             <li class="nav-item">
+                             {{-- <li class="nav-item">
                               <a class="nav-link menu-arrow" href="#sidebarFormsresourceddsd" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFormsresourceddsd">
                                    <span class="nav-icon">
                                        <iconify-icon icon="mdi:lightbulb-on-outline"></iconify-icon>
@@ -174,10 +164,10 @@
                                         </li>
                                    </ul>
                               </div>
-                         </li>
+                         </li> --}}
 
                          
-                         
+{{--                          
                          <li class="nav-item">
                               <a class="nav-link menu-arrow" href="#sidebarFormsresource" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFormsresource">
                                    <span class="nav-icon">
@@ -259,7 +249,7 @@
                                        
                                    </ul>
                               </div>
-                          </li>
+                          </li> --}}
 
 
                              <li class="nav-item">
@@ -274,12 +264,12 @@
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/contact-enquires">Contact Enquires</a>
                                         </li>
-                                        <li class="sub-nav-item">
+                                        {{-- <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/conversations">Conversations</a>
                                         </li>
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/admin/subscription">Subscription</a>
-                                        </li>
+                                        </li> --}}
                                        
                                    </ul>
                               </div>
