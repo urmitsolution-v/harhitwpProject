@@ -38,7 +38,11 @@ Route::get('/har-hith-news', [Homecontroller::class, 'harhithnews'])->name('arhi
 Route::match(['get','post'],'/contact-us', [Homecontroller::class, 'contactus'])->name('contactus');
 
 
-Route::get('/franchise-registration', [Homecontroller::class, 'franchise_registration'])->name('franchise_registration');
+Route::match(['get','post'],'/franchise-registration', [Homecontroller::class, 'franchise_registration'])->name('franchise_registration');
+Route::match(['get','post'],'/otp-page', [Homecontroller::class, 'otp_page'])->name('otp.page');
+Route::post('/verify-otp', [Homecontroller::class, 'verifyOtp'])
+    ->name('verify.otp');
+    
 Route::get('/login', [Homecontroller::class, 'login'])->name('login');
 
 // Route::get('/flight-list', [Homecontroller::class, 'flight_list'])->name('flight-list');

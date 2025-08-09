@@ -9,8 +9,11 @@ use App\Models\Info;
 use App\Models\Insights;
 use App\Models\Publication;
 use App\Models\Contact;
+use App\Models\User;
+use App\Models\UserData;
 use App\Models\Investment;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 class Homecontroller extends Controller
 {
@@ -74,10 +77,93 @@ class Homecontroller extends Controller
     }
  
  
-    public function franchise_registration(){
-     return view('website.franchise_registration');
+public function franchise_registration(Request $request)
+{
+    if ($request->isMethod('post')) {
+
+        $validated = $request->validate([
+            'name'     => ['required', 'regex:/^[a-zA-Z\s]+$/', 'min:2', 'max:25'],
+            'mobile'   => ['required', 'digits:10', 'regex:/^[6-9]\d{9}$/','unique:users,phone'],
+            'email'    => ['required', 'email','unique:users,email'],
+            'district' => ['required']
+        ]);
+
+        $otp = rand(1000, 9999);
+
+        session([
+            'franchise_registration_data' => [
+                'name'     => $validated['name'],
+                'mobile'   => $validated['mobile'],
+                'email'    => $validated['email'],
+                'district' => $validated['district'],
+            ],
+            'otp' => $otp,
+            'success_message' => 'Registration successful! Your OTP is ' . $otp
+        ]);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Registration successful! Redirecting to OTP page...',
+            'redirect_url' => route('otp.page')
+        ]);
     }
+
+    return view('website.franchise_registration');
+}
+
+public function otp_page()
+{
+    $otp = session('otp');
+    return view('website.otp_page', compact('otp'));
+}
   
+
+
+    public function verifyOtp(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'otp' => 'required|digits:4',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $enteredOtp = $request->input('otp');
+
+        if ($enteredOtp == Session::get('otp')) {
+    
+            $franchiseData = Session::get('franchise_registration_data');
+
+    $user = User::create([
+        'name'   => $franchiseData['name'],
+        'phone' => $franchiseData['mobile'],
+        'email'  => $franchiseData['email'],
+        'role'  => 'user',
+        'is_verify'  => 'N',
+    ]);
+
+    UserData::create([
+        'user_id'  => $user->id,
+        'district_name' => $franchiseData['district'],
+    ]);
+
+    Session::forget(['otp','franchise_registration_data']);
+            return response()->json([
+                'status'       => 'success',
+                'message'      => 'OTP verified successfully!',
+                'redirect_url' => '/login' 
+            ]);
+        }
+
+        return response()->json([
+            'status'  => 'error',
+            'message' => 'Invalid OTP. Please try again.'
+        ]);
+    }
  
     public function locatestore(){
      return view('website.locatestore');
@@ -164,5 +250,7 @@ class Homecontroller extends Controller
     public function login(){
      return view('website.login');
     }
+
+
 
 }

@@ -39,7 +39,13 @@ class User extends Authenticatable
         'role',
         'role_type',
         'remember_token',
+        'is_verify',
     ];
+
+    public function detail()
+{
+    return $this->hasOne(UserDetail::class);
+}
 
     /**
      * The attributes that should be hidden for serialization.
